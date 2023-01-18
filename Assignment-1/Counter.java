@@ -10,7 +10,10 @@ public class Counter {
     }
     
     public void addToList(int n){
-        primeNumbers.add(n);
+        synchronized(primeNumbers){
+            primeNumbers.add(n);
+        }
+        
     }
 
     public int getListLength() {
